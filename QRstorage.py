@@ -31,9 +31,13 @@ def txt2QR(i):
 	except Exception as e:
 		pass 
 
-	with open(file, 'r', encoding="utf-8") as f:
-		data = f.read()
-		# print(data)
+	try:
+		with open(file, 'r', encoding="utf-8") as f:
+			data = f.read()
+	except:
+		with open('input/' + i, 'rb') as f:
+			data = f.read()
+	# print(data)
 
 	try:
 		img.add_data(data)
@@ -112,11 +116,10 @@ if __name__=='__main__':
 
 		frame2video()
 	except Exception as e:
-		print(e)
+		# print(e)
 
-		# path = inp_file.split('/')[1]
-		# print(path)
-		# txt2QR(path)
+		path = inp_file.split('/')[1]
+		txt2QR(path)
 
 input('Press any key to delete splitter text folder')
 shutil.rmtree('vicks/output')
