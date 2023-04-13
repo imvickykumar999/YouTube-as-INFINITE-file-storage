@@ -1,24 +1,28 @@
 
-import qrcode, os
-from PIL import Image
+import qrcode
+import os
 
 img = qrcode.QRCode(
-    version=1,
+    version=2,
     error_correction=qrcode.constants.ERROR_CORRECT_L,
     box_size=100,
-    border=1,
+    border=2,
 )
 
-with open('CSV.txt', 'r') as f:
+file = 'input//keywords.csv'
+name = file.split('//')[1].split('.')[0]
+
+try:
+    os.mkdir(f'output//{name}')
+except Exception as e:
+    pass 
+
+with open(file, 'rb') as f:
     data = f.read()
 
 img.add_data(data)
 img.make(fit=True)
+img = img.make_image(fill_color="black", back_color="white")
 
-photo = 'QR.jpg'
-img = img.make_image(fill_color="black", 
-                     back_color="white")
+photo = f'output//{name}//{name}.jpg'
 img.save(photo)
-
-os.startfile(photo)
-print(img)
