@@ -1,34 +1,44 @@
 
-import qrcode
-import os
+from vicks import split_file as sf
+import qrcode, os
 
 img = qrcode.QRCode(
-    version=1,
+    version=5,
     error_correction=qrcode.constants.ERROR_CORRECT_L,
     box_size=100,
-    border=2,
+    border=5,
 )
 
-# file = 'input//keywords.csv'
-# file = 'input//img.png'
-# file = 'input//really_big_file.txt'
+inp_file = 'input/really_big_file.txt'
+sf.split(inp_file)
 
-file = 'input//2849.txt'
-name = file.split('//')[1].split('.')[0]
+dirFiles = os.listdir('vicks/output')
+dirFiles.sort(key=lambda f: int(f.split('.')[0]))
 
-try:
-    os.mkdir(f'output//{name}')
-except Exception as e:
-    pass 
+def txt2QR(i):
+    file = f'vicks/output/{i}'
+    folder = inp_file.split('/')[1].split('.')[0]
 
-with open(file, 'rb') as f:
-    data = f.read()
-    print(data)
+    try:
+        os.mkdir(f"output/{folder}")
+    except Exception as e:
+        pass 
 
-img.add_data(data)
-img.make(fit=True)
-img = img.make_image(fill_color="black", 
-                     back_color="white")
+    with open(file, 'rb') as f:
+        data = f.read()
+        # print(data)
 
-photo = f'output//{name}//{name}.jpg'
-img.save(photo)
+    try:
+        img.add_data(data)
+        img.make(fit=True)
+        image = img.make_image(fill_color="black", back_color="white")
+        
+        photo = f"output/{folder}/{i}.jpg"
+        image.save(photo)
+
+    except Exception as e:
+        print(e)
+        pass
+
+for i in dirFiles[:]:
+    txt2QR(i)
