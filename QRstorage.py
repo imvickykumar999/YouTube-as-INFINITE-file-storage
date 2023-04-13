@@ -1,20 +1,24 @@
 
-from moviepy.editor import VideoFileClip, AudioFileClip
 from vicks import split_file as sf
-import moviepy.video.fx.all as vfx
 import qrcode, os, cv2
 from PIL import Image
 
 Image.MAX_IMAGE_PIXELS = 933120000
-inp_file = 'input/really_big_file.txt'
+# inp_file = 'input/really_big_file.txt'
+inp_file = input('Enter file name from input folder : ')
+
+try:
+	os.mkdir('vicks/output')
+except Exception as e:
+	pass
+
+try:
+	os.mkdir("vicks/video")
+except Exception as e:
+	pass 
 
 folder = inp_file.split('/')[1].split('.')[0]
 sf.split(inp_file)
-
-try:
-	os.mkdir("output/video")
-except Exception as e:
-	pass 
 
 dirFiles = os.listdir('vicks/output')
 dirFiles.sort(key=lambda f: int(f.split('.')[0]))
@@ -77,41 +81,24 @@ def frame2video(path = f"output/{folder}"):
 			imResize.save(os.path.join(path, file), 'JPEG', quality = 95)
 			print(im.filename.split('\\')[-1], " is resized")
 
-	def generate_video():
-		image_folder = path
-		video_name = f'video/{folder}.avi'
-		
-		images = [img for img in os.listdir(image_folder)
-				if img.endswith(".jpg") or
-					img.endswith(".jpeg") or
-					img.endswith("png")]
-		
-		frame = cv2.imread(os.path.join(image_folder, images[0]))
-		height, width, layers = frame.shape
-		video = cv2.VideoWriter(os.path.join('output', video_name), 0, 1, (width, height))
+	video_name = f'video/{folder}.avi'
+	images = [
+		img for img in dirfiles
+		if img.endswith(".jpg") or
+		img.endswith(".jpeg") or
+		img.endswith("png")
+	]
+	
+	frame = cv2.imread(os.path.join(path, images[0]))
+	height, width, layers = frame.shape
+	video = cv2.VideoWriter(os.path.join('vicks', video_name), 0, 1, (width, height))
 
-		for image in images:
-			print('Writing for ', image)
-			video.write(cv2.imread(os.path.join(image_folder, image)))
-		
-		cv2.destroyAllWindows()
-		video.release()
-
-	generate_video()
-
-
-def framerate():
-	in_loc = f'output/video/{folder}.avi'
-	out_loc = f'output/video/{folder}.mp4'
-
-	clip = VideoFileClip(in_loc)
-	# clip = clip.set_fps(clip.fps * 20)
-	final = clip.fx(vfx.speedx, 30)
-
-	audioclip = AudioFileClip("vicks/TV.mp4")
-	videoclip = final.set_audio(audioclip)
-	videoclip.write_videofile(out_loc)
-        
+	for image in images:
+		print('Writing for ', image)
+		video.write(cv2.imread(os.path.join(path, image)))
+	
+	cv2.destroyAllWindows()
+	video.release()
 
 if __name__=='__main__':
 	for i in dirFiles[:10]:
@@ -119,4 +106,3 @@ if __name__=='__main__':
 		txt2QR(i)
 
 	frame2video()
-	framerate()
