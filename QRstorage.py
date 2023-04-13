@@ -1,11 +1,7 @@
 
 from vicks import split_file as sf
-import qrcode, os, cv2
+import qrcode, os, cv2, shutil
 from PIL import Image
-
-Image.MAX_IMAGE_PIXELS = 933120000
-# inp_file = 'input/really_big_file.txt'
-inp_file = input('Enter file name from input folder : ')
 
 try:
 	os.mkdir('vicks/output')
@@ -17,11 +13,9 @@ try:
 except Exception as e:
 	pass 
 
+# inp_file = 'input/really_big_file.txt'
+inp_file = 'input/' + input('Enter file name from input folder : ')
 folder = inp_file.split('/')[1].split('.')[0]
-sf.split(inp_file)
-
-dirFiles = os.listdir('vicks/output')
-dirFiles.sort(key=lambda f: int(f.split('.')[0]))
 
 def txt2QR(i):
 	img = qrcode.QRCode(
@@ -61,7 +55,7 @@ def frame2video(path = f"output/{folder}"):
 	dirfiles.sort(key=lambda f: int(f.split('.')[0]))
 
 	num_of_images = len(dirfiles)
-	print(f'num_of_images = {num_of_images}')
+	print(f'\nNumber of Images = {num_of_images}')
 
 	for file in dirfiles:
 		im = Image.open(os.path.join(path, file))
@@ -72,6 +66,7 @@ def frame2video(path = f"output/{folder}"):
 	mean_width = int(mean_width / num_of_images)
 	mean_height = int(mean_height / num_of_images)
 
+	print()
 	for file in dirfiles:
 		if file.endswith(".jpg") or file.endswith(".jpeg") or file.endswith("png"):
 			im = Image.open(os.path.join(path, file))
@@ -93,6 +88,7 @@ def frame2video(path = f"output/{folder}"):
 	height, width, layers = frame.shape
 	video = cv2.VideoWriter(os.path.join('vicks', video_name), 0, 1, (width, height))
 
+	print()
 	for image in images:
 		print('Writing for ', image)
 		video.write(cv2.imread(os.path.join(path, image)))
@@ -100,9 +96,27 @@ def frame2video(path = f"output/{folder}"):
 	cv2.destroyAllWindows()
 	video.release()
 
-if __name__=='__main__':
-	for i in dirFiles[:10]:
-		print(i)
-		txt2QR(i)
 
-	frame2video()
+if __name__=='__main__':
+	Image.MAX_IMAGE_PIXELS = 933120000
+
+	try:
+		sf.split(inp_file)
+
+		dirFiles = os.listdir('vicks/output')
+		dirFiles.sort(key=lambda f: int(f.split('.')[0]))
+
+		for i in dirFiles[:]:
+			print(i)
+			txt2QR(i)
+
+		frame2video()
+	except:
+
+		# path = inp_file.split('/')[1]
+		# print(path)
+		# txt2QR(path)
+		pass
+
+input('Press any key to delete splitter text folder')
+shutil.rmtree('vicks/output')

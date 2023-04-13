@@ -1,9 +1,8 @@
 
 from itertools import zip_longest
-import os
 
 def split(file = 'input/really_big_file.txt'):
-    n = 2
+    n = 3
 
     def grouper(n, iterable, fillvalue=None):
         args = [iter(iterable)] * n
