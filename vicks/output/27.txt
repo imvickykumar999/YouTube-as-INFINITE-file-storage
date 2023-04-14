@@ -1,3 +1,0 @@
-WHERE NAME='' OR 1=1 --' AND ADDRESS='123'
-
-(1, 'Paul', 32, 'California', 20000.0)

@@ -1,3 +1,0 @@
-
-command = f'''
-SELECT * FROM COMPANY

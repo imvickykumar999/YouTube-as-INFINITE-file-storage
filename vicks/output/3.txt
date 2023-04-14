@@ -1,3 +1,0 @@
-
-print ("Opened database successfully");
-

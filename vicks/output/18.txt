@@ -1,3 +1,0 @@
-conn.commit()
-
-conn = sqlite3.connect('test.db')

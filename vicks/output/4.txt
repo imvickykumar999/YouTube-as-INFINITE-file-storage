@@ -1,3 +1,0 @@
-conn.execute('''
-CREATE TABLE COMPANY (
-  ID INT PRIMARY KEY NOT NULL,

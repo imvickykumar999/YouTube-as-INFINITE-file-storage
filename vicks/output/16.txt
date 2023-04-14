@@ -1,3 +1,0 @@
-  ID, NAME, AGE, ADDRESS, SALARY
-  ) VALUES (
-    4, 'Mark', 25, 'Rich-Mond', 65000.00
