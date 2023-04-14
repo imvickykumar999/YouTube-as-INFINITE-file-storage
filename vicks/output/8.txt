@@ -1,0 +1,3 @@
+  ID, NAME, AGE, ADDRESS, SALARY
+  ) VALUES (
+    1, 'Paul', 32, 'California', 20000.00

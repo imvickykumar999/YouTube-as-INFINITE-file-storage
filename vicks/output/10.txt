@@ -1,0 +1,3 @@
+conn.execute('''
+INSERT INTO COMPANY (
+  ID, NAME, AGE, ADDRESS, SALARY

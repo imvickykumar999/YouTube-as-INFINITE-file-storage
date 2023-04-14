@@ -1,0 +1,3 @@
+
+NAME = input('Enter NAME : ')
+ADDRESS = input('Enter ADDRESS : ')
