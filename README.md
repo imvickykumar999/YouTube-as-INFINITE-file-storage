@@ -1,7 +1,18 @@
-# YOUTUBE AS INFINITE FILE STORAGE
+# `YOUTUBE AS INFINITE FILE STORAGE GLITCH`
 
 - `Article Idea` : [youtube-as-infinite-file-storage](https://hackaday.com/2023/02/21/youtube-as-infinite-file-storage/)
 - `Output Video `: https://youtu.be/cWV8vfdbFL4
+
+--------------
+
+>## Other similar repositories 
+>
+- https://github.com/tensorneko/YDrive
+- https://github.com/dzhang314/YouTubeDrive
+- https://github.com/DvorakDwarf/Infinite-Storage-Glitch
+- https://github.com/lewangdev/youtube-drive
+- [`More ...`](https://www.google.com/search?rlz=1C1CHBF_enIN1050IN1050&sxsrf=APwXEddQ1NT417bvGiGsaKgpvkNU5_EGdw:1681453542664&q=youtube+infinite+file+storage+github&tbm=isch&sa=X&ved=2ahUKEwiHo_fI3qj-AhXXRmwGHQuVBnMQ0pQJegQICBAB&biw=1536&bih=746&dpr=1.25)
+
 
 <br>
 
