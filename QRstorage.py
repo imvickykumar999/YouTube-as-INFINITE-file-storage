@@ -13,10 +13,6 @@ try:
 except Exception as e:
 	pass 
 
-# inp_file = 'input/really_big_file.txt'
-inp_file = 'input/' + input('Enter file name from input folder : ')
-folder = inp_file.split('/')[1]
-
 def txt2QR(i):
 	img = qrcode.QRCode(
 		version=2,
@@ -51,7 +47,7 @@ def txt2QR(i):
 		# print(e)
 		pass
 
-def frame2video(path = f"output/{folder}"):
+def frame2video(path):
 	mean_height = 0
 	mean_width = 0
 
@@ -103,6 +99,10 @@ def frame2video(path = f"output/{folder}"):
 
 if __name__=='__main__':
 	Image.MAX_IMAGE_PIXELS = 933120000
+	# inp_file = 'input/really_big_file.txt'
+
+	inp_file = 'input/' + input('Enter file name from input folder : ')
+	folder = inp_file.split('/')[1]
 
 	try:
 		sf.split(inp_file)
@@ -114,7 +114,7 @@ if __name__=='__main__':
 			print(i)
 			txt2QR(i)
 
-		frame2video()
+		frame2video(f"output/{folder}")
 	except Exception as e:
 		# print(e)
 

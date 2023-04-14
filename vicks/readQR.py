@@ -7,10 +7,17 @@ from PIL import Image
 
 SAVING_FRAMES_PER_SECOND = 1
 
-def QRjson(file):
+def QRjson(file = "input/1.jpg"):
     out = decode(Image.open(file))
-    out = out[0].data.decode('utf-8')
-    return out
+    # print(out)
+
+    if len(out):
+        out = out[0].data.decode('utf-8')
+        return out
+    else:
+        return '\n'
+
+# QRjson()
 
 def main(video_file, mode):
     video_clip = VideoFileClip(video_file)
@@ -41,9 +48,12 @@ def main(video_file, mode):
             myfile.write(line)
         mode = "a"
 
-# video_file = 'video/InternshipDetails.mp4'
-video_file = 'video/' + input('Enter file name from video folder : ')
-main(video_file, "w")
+
+if __name__=='__main__':
+    # video_file = 'video/InternshipDetails.mp4'
+
+    video_file = 'video/' + input('Enter file name from video folder : ')
+    main(video_file, "w")
 
 input('Press any key to delete input folder')
 shutil.rmtree('input')

@@ -1,0 +1,19 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://github.com/NaturalHistoryMuseum/pyzbar/issues/29
+
+WARNING: zbar\decoder\databar.c:1250: <unknown>: Assertion "seg->finder >= 0" failed.
+        i=2 f=-1(010) part=1
