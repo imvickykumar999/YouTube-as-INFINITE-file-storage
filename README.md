@@ -3,9 +3,13 @@
 - `Article Idea` : [youtube-as-infinite-file-storage](https://hackaday.com/2023/02/21/youtube-as-infinite-file-storage/)
 - `Output Video` : [YouTube Playlist](https://www.youtube.com/playlist?list=PLyeWzbpbicN0OsBs4S4xT1onLz9lsQR3E)
 
---------------
+<br>
 
->## Other similar repositories 
+[![image](https://user-images.githubusercontent.com/50515418/231980117-02902088-56be-4644-a44a-d9728eae724f.png)](https://www.youtube.com/playlist?list=PLyeWzbpbicN0OsBs4S4xT1onLz9lsQR3E)
+
+<br>
+
+## `Other similar repositories`
 >
 - https://github.com/tensorneko/YDrive
 - https://github.com/dzhang314/YouTubeDrive
