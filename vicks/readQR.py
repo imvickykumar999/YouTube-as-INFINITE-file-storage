@@ -9,7 +9,7 @@ SAVING_FRAMES_PER_SECOND = 1
 
 def QRjson(file = "input/1.jpg"):
     out = decode(Image.open(file))
-    # print(out)
+    print(out)
 
     if len(out):
         out = out[0].data.decode('utf-8')
@@ -41,7 +41,6 @@ def main(video_file, mode):
 
         video_clip.save_frame(frame_filename, current_duration)
         line = QRjson(frame_filename)
-        print(line)
 
         fileout, ext = os.path.splitext(video_file)
         with open(f"files/{fileout.split('/')[1] +ext}.txt", mode) as myfile:
