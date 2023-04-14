@@ -1,5 +1,12 @@
 # `YOUTUBE AS INFINITE FILE STORAGE GLITCH`
 
+    This repository not only converts Text files 
+    (like .txt, .html, .sql, .py, .cpp, .json, etc.) 
+    into encoded QRcode video, but also decodes backs 
+    from video into original files, without any data loss.
+
+<hr>
+
 - `Article Idea` : [youtube-as-infinite-file-storage](https://hackaday.com/2023/02/21/youtube-as-infinite-file-storage/)
 - `Output Video` : [YouTube Playlist](https://www.youtube.com/playlist?list=PLyeWzbpbicN0OsBs4S4xT1onLz9lsQR3E)
 
