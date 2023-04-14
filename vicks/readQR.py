@@ -4,6 +4,7 @@ from moviepy.editor import VideoFileClip
 from pyzbar.pyzbar import decode
 import numpy as np, os, shutil
 from PIL import Image
+import split_file as yt
 
 SAVING_FRAMES_PER_SECOND = 1
 
@@ -50,9 +51,13 @@ def main(video_file, mode):
 
 if __name__=='__main__':
     # video_file = 'video/InternshipDetails.mp4'
+    video_file = input('Enter file name from `video` folder or YouTube Video `link` : ')
+    
+    try:
+        video_file = yt.ytvideo(video_file)
+    except:
+        pass
+    main('video/' + video_file, "w")
 
-    video_file = 'video/' + input('Enter file name from video folder : ')
-    main(video_file, "w")
-
-input('Press any key to delete input folder')
+input('\n\tPress any key to delete input folder')
 shutil.rmtree('input')

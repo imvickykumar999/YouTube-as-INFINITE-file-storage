@@ -1,5 +1,7 @@
 
 from itertools import zip_longest
+from pytube import YouTube
+import re
 
 def split(file = 'input/really_big_file.txt'):
     n = 3
@@ -12,3 +14,15 @@ def split(file = 'input/really_big_file.txt'):
         for i, g in enumerate(grouper(n, f, fillvalue=''), 1):
             with open(f'vicks/output/{i}.txt', 'w') as fout:
                 fout.writelines(g)
+
+def ytvideo(link):
+    # link = input("Enter link here: ")
+    yt = YouTube(link)
+    video = yt.streams.get_highest_resolution()
+
+    path_to_download_folder = 'video'
+    filename = yt.title.replace(' ', '')
+    filename = re.sub('[^A-Za-z0-9]+', '', filename)
+
+    video.download(path_to_download_folder.replace(' ',''), filename=f'{filename}.mp4')
+    return f'{filename}.mp4'

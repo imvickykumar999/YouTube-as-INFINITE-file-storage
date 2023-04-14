@@ -121,5 +121,5 @@ if __name__=='__main__':
 		path = inp_file.split('/')[1]
 		txt2QR(path)
 
-input('Press any key to delete splitter text folder')
+input('\n\tPress any key to delete splitter text folder')
 shutil.rmtree('vicks/output')
