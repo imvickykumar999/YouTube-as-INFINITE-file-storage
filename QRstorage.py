@@ -15,7 +15,7 @@ except Exception as e:
 
 # inp_file = 'input/really_big_file.txt'
 inp_file = 'input/' + input('Enter file name from input folder : ')
-folder = inp_file.split('/')[1].split('.')[0]
+folder = inp_file.split('/')[1]
 
 def txt2QR(i):
 	img = qrcode.QRCode(

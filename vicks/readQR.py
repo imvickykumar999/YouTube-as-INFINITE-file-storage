@@ -40,8 +40,6 @@ def main(video_file, mode):
         with open(f"files/{fileout.split('/')[1] +ext}.txt", mode) as myfile:
             myfile.write(line)
         mode = "a"
-        
-
 
 # video_file = 'video/InternshipDetails.mp4'
 video_file = 'video/' + input('Enter file name from video folder : ')
