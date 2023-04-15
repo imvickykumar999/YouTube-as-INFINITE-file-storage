@@ -51,7 +51,7 @@ def main(video_file, mode):
 
 if __name__=='__main__':
     # video_file = 'video/InternshipDetails.mp4'
-    video_file = input('Enter file name from `video` folder or YouTube Video `link` : ')
+    video_file = input('Enter file name from `video` folder or YouTube or Instagram Reel `link` : ')
     
     try:
         video_file = yt.ytvideo(video_file)

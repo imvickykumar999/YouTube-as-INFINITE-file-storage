@@ -86,12 +86,11 @@ def getname(url):
         else:
             url = url[3]
             itis = 'user'
-
     return url, itis
 
 
 def instavideo(url = 'ClwrpW1BB-R'):
-    """View Instagram user follower count"""
+    url = getname(url)[0]
     link = f'https://www.instagram.com/p/{url}/?&__a=1&__d=1'
 
     user = requests.get(link)

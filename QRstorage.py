@@ -112,7 +112,10 @@ if __name__=='__main__':
 
 		for i in dirFiles[:]:
 			print(i)
-			txt2QR(i)
+			try:
+				txt2QR(i)
+			except:
+				pass
 
 		frame2video(f"output/{folder}")
 	except Exception as e:
