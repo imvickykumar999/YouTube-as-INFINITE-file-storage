@@ -1,5 +1,7 @@
 
 import os
+
+filename = 'data.csv'
 in_directory = '../input'
 out_directory = 'Binary'
 
@@ -7,7 +9,10 @@ out_directory = 'Binary'
 def file_to_binary_string(file_path):
     with open(file_path, 'rb') as file:
         binary_code = file.read()
-        binary_string = ''.join(format(byte, '08b') for byte in binary_code)
+        byte_list = (format(byte, '08b') for byte in binary_code)
+
+        print(list(byte_list))
+        binary_string = ''.join(byte_list)
     return binary_string
 
 
@@ -18,7 +23,7 @@ def binary_string_to_file(binary_string, file_path):
         file.write(bytes_arr)
 
 
-for filename in os.listdir(in_directory):
+def save_binary(in_directory, out_directory, filename):
     file_path = os.path.join(in_directory, filename)
 
     if os.path.isfile(file_path):
@@ -28,9 +33,15 @@ for filename in os.listdir(in_directory):
         with open(file_path + '.txt', 'w') as f:
             f.write(binary_string)
 
+save_binary(in_directory, out_directory, filename)
+
+
+def write_all():
+    for filename in os.listdir(in_directory):
+        save_binary(in_directory, out_directory, filename)
+
+
 # convert single line binary file into multiple line
-
-
 
 # with open('temp.txt', 'r') as f:
 #     binary_string = f.read()
