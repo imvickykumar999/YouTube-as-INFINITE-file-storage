@@ -8,7 +8,7 @@
 <hr>
 
 - `Article Idea` : [youtube-as-infinite-file-storage](https://hackaday.com/2023/02/21/youtube-as-infinite-file-storage/)
-- `Output Video` : [YouTube Playlist](https://www.youtube.com/playlist?list=PLyeWzbpbicN0OsBs4S4xT1onLz9lsQR3E)
+- `Output Video` : [Instagram Reels](https://www.instagram.com/vix.bot/reels/)
 
 <br>
 
