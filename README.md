@@ -1,11 +1,28 @@
 # `YOUTUBE AS INFINITE FILE STORAGE GLITCH`
 
+>### Description
+
+    You might know, that Google Drive, Onedrive, Dropbox, 
+    etc., has some file storage limit, after which you need
+    Premium Subscription, but using this repository, 
+    
+    you can extent storage limit by converting any kind of 
+    text file into Video which further can be Uploaded on 
+    either Instagram, YouTube 
+    (in private mode for personal file) 
+    or any other social media.
+    
+    You can further revert back those Videos into Original 
+    files too at any time, without any data loss.
+    
     This repository not only converts Text files 
     (like .txt, .html, .sql, .py, .cpp, .json, etc.) 
     into encoded QRcode video, but also decodes backs 
     from video into original files, without any data loss.
 
 <hr>
+
+>## Ideas 💡
 
 - `Article Idea` : [youtube-as-infinite-file-storage](https://hackaday.com/2023/02/21/youtube-as-infinite-file-storage/)
 - `Output Video` : [Instagram Reels](https://www.instagram.com/vix.bot/)
