@@ -42,9 +42,11 @@
 https://stackoverflow.com/a/4829998/11493297
 
 [![image](https://user-images.githubusercontent.com/50515418/231980117-02902088-56be-4644-a44a-d9728eae724f.png)](https://www.youtube.com/playlist?list=PLyeWzbpbicN0OsBs4S4xT1onLz9lsQR3E)
--->
 
 >[![image](https://user-images.githubusercontent.com/50515418/232205596-854cfda6-6fdd-4437-92dd-a2f6a73be3f4.png)](https://www.youtube.com/playlist?list=PLyeWzbpbicN0OsBs4S4xT1onLz9lsQR3E)
+-->
+
+>[![image](https://user-images.githubusercontent.com/50515418/232213872-49c6b918-dd13-4ead-9a63-7b69e0b23a82.png)](https://www.instagram.com/vix.bot/)
 
 ----------------
 
