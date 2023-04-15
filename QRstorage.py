@@ -2,6 +2,7 @@
 from vicks import split_file as sf
 import qrcode, os, cv2, shutil
 from PIL import Image
+import urllib.request
 
 try:
 	os.mkdir('vicks/output')
@@ -99,9 +100,18 @@ def frame2video(path):
 
 if __name__=='__main__':
 	Image.MAX_IMAGE_PIXELS = 933120000
-	# inp_file = 'input/really_big_file.txt'
 
-	inp_file = 'input/' + input('Enter file name from input folder : ')
+	# filename = 'input/really_big_file.txt'
+	filename = input('Enter file name from input folder : ')
+
+	try:
+		file = f'{os.path.basename(filename)}'
+		filepath = os.path.join('input', file)
+		urllib.request.urlretrieve(filename, filepath)
+	except:
+		file = filename
+
+	inp_file = 'input/' + file
 	folder = inp_file.split('/')[1]
 
 	try:
