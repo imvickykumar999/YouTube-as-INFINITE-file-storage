@@ -32,11 +32,10 @@ def save_binary(in_directory, out_directory, filename):
 
     if os.path.isfile(file_path):
         binary_string = file_to_binary_string(file_path)
-
         binary_string = insert_newlines(binary_string)
-        print(binary_string)
+        # print(binary_string)
 
-        file_path = os.path.join(out_directory, filename)
+        file_path = os.path.join(out_directory, 'UNIQUE')
         with open(file_path + '.txt', 'w') as f:
             f.write(binary_string)
 

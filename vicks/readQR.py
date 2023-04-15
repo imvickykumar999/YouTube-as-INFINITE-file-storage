@@ -2,11 +2,14 @@
 # pip install pyzbar
 from moviepy.editor import VideoFileClip
 from pyzbar.pyzbar import decode
+import binary_data as bd
+
 import numpy as np, os, shutil
 import split_file as yt
 from PIL import Image
 
 SAVING_FRAMES_PER_SECOND = 1
+
 
 def QRjson(file = "input/1.jpg"):
     out = decode(Image.open(file))
@@ -19,6 +22,7 @@ def QRjson(file = "input/1.jpg"):
         return '\n'
 
 # QRjson()
+
 
 def main(video_file, mode):
     video_clip = VideoFileClip(video_file)
@@ -64,6 +68,8 @@ if __name__=='__main__':
         pass
 
     main('video/' + video_file, "w")
+    bd.revert_back('files', 'files', video_file + '.txt')
+
 
 input('\n\tPress any key to delete input folder')
 shutil.rmtree('input')

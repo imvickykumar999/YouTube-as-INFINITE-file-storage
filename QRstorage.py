@@ -1,8 +1,11 @@
 
+from vicks import binary_data as bd
 from vicks import split_file as sf
+
 import qrcode, os, cv2, shutil
 from PIL import Image
 import urllib.request
+
 
 try:
 	os.mkdir('vicks/output')
@@ -13,6 +16,7 @@ try:
 	os.mkdir("vicks/video")
 except Exception as e:
 	pass 
+
 
 def txt2QR(i):
 	img = qrcode.QRCode(
@@ -47,6 +51,7 @@ def txt2QR(i):
 	except Exception as e:
 		# print(e)
 		pass
+
 
 def frame2video(path):
 	mean_height = 0
@@ -102,7 +107,7 @@ if __name__=='__main__':
 	Image.MAX_IMAGE_PIXELS = 933120000
 
 	# filename = 'input/really_big_file.txt'
-	filename = input('Enter file name from input folder : ')
+	filename = input('Enter `URL` or file `name` from input folder : ')
 
 	try:
 		file = f'{os.path.basename(filename)}'
@@ -111,12 +116,15 @@ if __name__=='__main__':
 	except:
 		file = filename
 
-	inp_file = 'input/' + file
+	out_directory = in_directory = 'input/'
+	inp_file = in_directory + file
+
 	folder = inp_file.split('/')[1]
+	bd.save_binary(in_directory, out_directory, file)
+	inp_file = in_directory + 'UNIQUE.txt'
 
 	try:
 		sf.split(inp_file)
-
 		dirFiles = os.listdir('vicks/output')
 		dirFiles.sort(key=lambda f: int(f.split('.')[0]))
 
@@ -133,6 +141,7 @@ if __name__=='__main__':
 
 		path = inp_file.split('/')[1]
 		txt2QR(path)
+
 
 input('\n\tPress any key to delete splitter text folder')
 shutil.rmtree('vicks/output')

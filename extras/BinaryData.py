@@ -2,8 +2,6 @@
 import os
 
 # filename = 'data.csv'
-# filename = 'binary.txt.avi.txt'
-
 # in_directory = '../input'
 # out_directory = 'Binary'
 
@@ -57,6 +55,7 @@ def revert_back(in_directory, out_directory, filename):
 
         binary_string = ''.join(binary_string.split('\n'))
         # print(binary_string)
-    binary_string_to_file(binary_string, file_out)
+    binary_string_to_file(binary_string, file_out + '.txt')
 
-# revert_back(in_directory, out_directory, filename)
+filename = 'data.csv.avi.txt'
+revert_back('', '', filename)
