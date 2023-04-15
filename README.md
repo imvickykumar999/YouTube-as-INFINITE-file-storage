@@ -20,16 +20,23 @@
     into encoded QRcode video, but also decodes backs 
     from video into original files, without any data loss.
 
-<hr>
+<hr> <br>
 
+>
 >## Ideas 💡
 
-- `Article Idea` : [youtube-as-infinite-file-storage](https://hackaday.com/2023/02/21/youtube-as-infinite-file-storage/)
+- `Article Idea` : [Youtube as Infinite File Storage](https://hackaday.com/2023/02/21/youtube-as-infinite-file-storage/)
 - `Output Video` : [Instagram Reels](https://www.instagram.com/vix.bot/)
 
 <br>
 
+<!--
+https://stackoverflow.com/a/4829998/11493297
+
 [![image](https://user-images.githubusercontent.com/50515418/231980117-02902088-56be-4644-a44a-d9728eae724f.png)](https://www.youtube.com/playlist?list=PLyeWzbpbicN0OsBs4S4xT1onLz9lsQR3E)
+-->
+
+>[![image](https://user-images.githubusercontent.com/50515418/232205596-854cfda6-6fdd-4437-92dd-a2f6a73be3f4.png)](https://www.youtube.com/playlist?list=PLyeWzbpbicN0OsBs4S4xT1onLz9lsQR3E)
 
 ----------------
 
