@@ -58,13 +58,12 @@ https://stackoverflow.com/a/4829998/11493297
 
 `Don't Scan any frame`
 
-
-<!--
 <video width="320" height="240" controls>
   <source src="https://user-images.githubusercontent.com/50515418/231773220-fcb72885-6495-4237-af73-b3b2eaf9cba1.mp4" type="video/mp4">
   Error Message
 </video>
 
+<!--
 --------------------------
 
 >## `Storing 1kb of Image into QRcode`
