@@ -1,6 +1,6 @@
 # `YOUTUBE and INSTAGRAM` `as ♾️ INFINITE FILE-STORAGE` `GLITCH`
 
->[![image](https://user-images.githubusercontent.com/50515418/232205596-854cfda6-6fdd-4437-92dd-a2f6a73be3f4.png)](https://www.youtube.com/playlist?list=PLyeWzbpbicN0OsBs4S4xT1onLz9lsQR3E)
+>[![image](https://user-images.githubusercontent.com/50515418/232217725-c8472f82-3525-4ce2-af31-7d26ebbcf9f6.png)](https://www.youtube.com/playlist?list=PLyeWzbpbicN0OsBs4S4xT1onLz9lsQR3E)
 
 <br>
 
