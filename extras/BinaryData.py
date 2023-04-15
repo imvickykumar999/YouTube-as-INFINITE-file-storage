@@ -1,9 +1,15 @@
 
+import os
+in_directory = '../input'
+out_directory = 'Binary'
+
+
 def file_to_binary_string(file_path):
     with open(file_path, 'rb') as file:
         binary_code = file.read()
         binary_string = ''.join(format(byte, '08b') for byte in binary_code)
     return binary_string
+
 
 def binary_string_to_file(binary_string, file_path):
     with open(file_path, 'wb') as file:
@@ -12,13 +18,20 @@ def binary_string_to_file(binary_string, file_path):
         file.write(bytes_arr)
 
 
-file_path = 'TVglitch.mp3'
-binary_string = file_to_binary_string('Original/' + file_path)
+for filename in os.listdir(in_directory):
+    file_path = os.path.join(in_directory, filename)
 
-with open('temp.txt', 'w') as f:
-    f.write(binary_string)
+    if os.path.isfile(file_path):
+        binary_string = file_to_binary_string(file_path)
 
-with open('temp.txt', 'r') as f:
-    binary_string = f.read()
+        file_path = os.path.join(out_directory, filename)
+        with open(file_path + '.txt', 'w') as f:
+            f.write(binary_string)
 
-binary_string_to_file(binary_string, 'Binary/' + file_path)
+# convert single line binary file into multiple line
+
+
+
+# with open('temp.txt', 'r') as f:
+#     binary_string = f.read()
+# binary_string_to_file(binary_string, 'Binary/' + file_path)
