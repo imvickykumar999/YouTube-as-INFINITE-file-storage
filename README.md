@@ -3,7 +3,7 @@
 ----------------
 
 <p align="center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/SflkTjvnKwU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLyeWzbpbicN0OsBs4S4xT1onLz9lsQR3E" allowfullscreen></iframe>
 </p>
 
 -----------------
@@ -45,10 +45,6 @@ https://stackoverflow.com/a/4829998/11493297
 -->
 
 >[![image](https://user-images.githubusercontent.com/50515418/232205596-854cfda6-6fdd-4437-92dd-a2f6a73be3f4.png)](https://www.youtube.com/playlist?list=PLyeWzbpbicN0OsBs4S4xT1onLz9lsQR3E)
-
-<p align="center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLyeWzbpbicN0OsBs4S4xT1onLz9lsQR3E" allowfullscreen></iframe>
-</p>
 
 ----------------
 
