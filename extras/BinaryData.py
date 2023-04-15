@@ -1,17 +1,17 @@
 
 import os
 
-filename = 'data.csv'
-in_directory = '../input'
-out_directory = 'Binary'
+# filename = 'data.csv'
+# filename = 'binary.txt.avi.txt'
+
+# in_directory = '../input'
+# out_directory = 'Binary'
 
 
 def file_to_binary_string(file_path):
     with open(file_path, 'rb') as file:
         binary_code = file.read()
         byte_list = (format(byte, '08b') for byte in binary_code)
-
-        print(list(byte_list))
         binary_string = ''.join(byte_list)
     return binary_string
 
@@ -23,26 +23,40 @@ def binary_string_to_file(binary_string, file_path):
         file.write(bytes_arr)
 
 
+def insert_newlines(string, every=8*20):
+    return '\n'.join(string[i:i+every] for i in range(0, len(string), every))
+
+
 def save_binary(in_directory, out_directory, filename):
     file_path = os.path.join(in_directory, filename)
 
     if os.path.isfile(file_path):
         binary_string = file_to_binary_string(file_path)
 
+        binary_string = insert_newlines(binary_string)
+        print(binary_string)
+
         file_path = os.path.join(out_directory, filename)
         with open(file_path + '.txt', 'w') as f:
             f.write(binary_string)
 
-save_binary(in_directory, out_directory, filename)
+# save_binary(in_directory, out_directory, filename)
 
 
-def write_all():
+def write_all(in_directory, out_directory, filename):
     for filename in os.listdir(in_directory):
         save_binary(in_directory, out_directory, filename)
 
 
-# convert single line binary file into multiple line
+def revert_back(in_directory, out_directory, filename):
+    file_in = os.path.join(in_directory, filename)
+    file_out = os.path.join(out_directory, filename)
 
-# with open('temp.txt', 'r') as f:
-#     binary_string = f.read()
-# binary_string_to_file(binary_string, 'Binary/' + file_path)
+    with open(file_in, 'r') as f:
+        binary_string = f.read()
+
+        binary_string = ''.join(binary_string.split('\n'))
+        # print(binary_string)
+    binary_string_to_file(binary_string, file_out)
+
+# revert_back(in_directory, out_directory, filename)
