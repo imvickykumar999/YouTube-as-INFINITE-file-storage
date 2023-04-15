@@ -27,7 +27,7 @@ def ytvideo(link):
     video.download(path_to_download_folder.replace(' ',''), filename=f'{filename}.mp4')
     return f'{filename}.mp4'
 
-
-req = requests.get('https://www.instagram.com/p/CqTC9d3vYlX/?__a=1&__d=1')
-js = req.json()
-x = js['graphql']['shortcode_media']['edge_sidecar_to_children']['edges'][0]['node']['video_url']
+def instavideo():
+    req = requests.get('https://www.instagram.com/p/CqTC9d3vYlX/?__a=1&__d=1')
+    js = req.json()
+    x = js['graphql']['shortcode_media']['edge_sidecar_to_children']['edges'][0]['node']['video_url']
