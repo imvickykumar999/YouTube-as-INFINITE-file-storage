@@ -3,8 +3,8 @@
 from moviepy.editor import VideoFileClip
 from pyzbar.pyzbar import decode
 import numpy as np, os, shutil
-from PIL import Image
 import split_file as yt
+from PIL import Image
 
 SAVING_FRAMES_PER_SECOND = 1
 
@@ -57,6 +57,12 @@ if __name__=='__main__':
         video_file = yt.ytvideo(video_file)
     except:
         pass
+
+    try:
+        video_file = yt.instavideo(video_file)
+    except:
+        pass
+
     main('video/' + video_file, "w")
 
 input('\n\tPress any key to delete input folder')
