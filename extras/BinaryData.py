@@ -57,5 +57,5 @@ def revert_back(in_directory, out_directory, filename):
         # print(binary_string)
     binary_string_to_file(binary_string, file_out + '.txt')
 
-filename = 'data.csv.avi.txt'
-revert_back('', '', filename)
+# filename = 'data.csv.avi.txt'
+# revert_back('', '', filename)
