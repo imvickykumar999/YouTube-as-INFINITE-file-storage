@@ -25,9 +25,10 @@
     You can further revert back those Videos into Original 
     files too at any time, without any data loss.
     
-    This repository not only converts Text files 
-    (like .txt, .html, .sql, .py, .cpp, .json, etc.) 
-    into encoded QRcode video, but also decodes backs 
+    This repository not only converts any files 
+    (like .png, .jpg, .mp3, .mp4, .wav, .m4a, .gif, .db, 
+    .txt, .html, .sql, .py, .cpp, .json, and many more) 
+    into BINARY encoded QRcode video, but also decodes backs 
     from video into original files, without any data loss.
 
 <hr> <br>
