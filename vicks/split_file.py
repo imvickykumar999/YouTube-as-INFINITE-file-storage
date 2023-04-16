@@ -10,8 +10,7 @@ def grouper(n, iterable, fillvalue=None):
     return zip_longest(fillvalue=fillvalue, *args)
 
 
-def split(file = 'input/really_big_file.txt'):
-    n = 3
+def split(file, n=3):
     with open(file) as f:
         for i, g in enumerate(grouper(n, f, fillvalue=''), 1):
             with open(f'vicks/output/{i}.txt', 'w') as fout:
@@ -31,42 +30,6 @@ def ytvideo(link):
     filename = re.sub('[^A-Za-z0-9]+', '', filename)
     video.download(path_to_download_folder.replace(' ',''), filename=f'{filename}.mp4')
     return f'{filename}.mp4'
-
-
-def uploadonYT():
-    from simple_youtube_api.Channel import Channel
-    from simple_youtube_api.LocalVideo import LocalVideo
-
-    # loggin into the channel
-    channel = Channel()
-    channel.login("client_secret.json", "credentials.storage")
-
-    # setting up the video that is going to be uploaded
-    video = LocalVideo(file_path="test_vid.mp4")
-
-    # setting snippet
-    video.set_title("My Title")
-    video.set_description("This is a description")
-    video.set_tags(["this", "tag"])
-    video.set_category("gaming")
-    video.set_default_language("en-US")
-
-    # setting status
-    video.set_embeddable(True)
-    video.set_license("creativeCommon")
-    video.set_privacy_status("private")
-    video.set_public_stats_viewable(True)
-
-    # setting thumbnail
-    video.set_thumbnail_path('test_thumb.png')
-
-    # uploading video and printing the results
-    video = channel.upload_video(video)
-    print(video.id)
-    print(video)
-
-    # liking video
-    video.like()
 
 
 def getname(url):
