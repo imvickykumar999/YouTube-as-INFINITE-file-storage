@@ -13,6 +13,11 @@ except Exception as e:
 	pass
 
 try:
+	os.mkdir('output')
+except Exception as e:
+	pass
+
+try:
 	os.mkdir("vicks/video")
 except Exception as e:
 	pass 
