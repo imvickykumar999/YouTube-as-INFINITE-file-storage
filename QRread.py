@@ -8,8 +8,8 @@ from pyzbar.pyzbar import decode
 import numpy as np, os, shutil
 from PIL import Image
 
-SAVING_FRAMES_PER_SECOND = 1
 
+SAVING_FRAMES_PER_SECOND = 1
 
 def QRjson(file):
     out = decode(Image.open(file))
@@ -20,8 +20,6 @@ def QRjson(file):
         return out
     else:
         return '\n'
-
-# QRjson()
 
 
 def main(video_file, mode):
@@ -55,7 +53,6 @@ def main(video_file, mode):
 
 
 if __name__=='__main__':
-    # video_file = 'video/InternshipDetails.mp4'
     video_file = input('Enter file name from `video` folder or YouTube or Instagram Reel `link` : ')
     
     try:

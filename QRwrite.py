@@ -82,13 +82,16 @@ def frame2video(path):
 	
 	frame = cv2.imread(os.path.join(path, images[0]))
 	height, width, layers = frame.shape
-	video = cv2.VideoWriter(os.path.join('vicks', video_name), 0, 1, (width, height))
+
+	ospath = os.path.join('vicks', video_name)
+	video = cv2.VideoWriter(ospath, 0, 1, (width, height))
 
 	print()
 	for image in images:
 		print('Writing for ', image)
 		video.write(cv2.imread(os.path.join(path, image)))
 	
+	bd.compress_zip(ospath)
 	cv2.destroyAllWindows()
 	video.release()
 
@@ -124,12 +127,11 @@ if __name__=='__main__':
 				txt2QR(i)
 			except:
 				pass
-
 		frame2video(f"output/{folder}")
+		
 	except Exception as e:
-		# print(e)
-
-		path = inp_file.split('/')[1]
+		path = '1.jpg'
+		print(e)
 		txt2QR(path)
 
 

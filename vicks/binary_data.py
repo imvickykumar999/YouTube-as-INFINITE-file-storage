@@ -1,5 +1,5 @@
 
-import os
+import os, zipfile
 
 def file_to_binary_string(file_path):
     with open(file_path, 'rb') as file:
@@ -52,3 +52,17 @@ def revert_back(in_directory, out_directory, filename):
     binary_string_to_file(binary_string, file_out)
 
 # revert_back(in_directory, out_directory, filename)
+
+
+def compress_zip(file):
+    print('>>> Zipping')
+    with zipfile.ZipFile(f'{file}.zip', 'w', zipfile.ZIP_DEFLATED) as f:
+        f.write(file)
+    print('>>> Zipped')
+
+
+def decompress_unzip():
+    print('>>> Unzipping...')
+    with zipfile.ZipFile('output.zip', 'r') as f:
+        f.extractall('.')
+    print('>>> Unzipped.')
