@@ -1,5 +1,5 @@
 
-import os
+import zipfile, os
 
 # filename = 'data.csv'
 # filename = 'binary.txt.avi.txt'
@@ -38,6 +38,9 @@ def save_binary(in_directory, out_directory, filename):
         file_path = os.path.join(out_directory, 'UNIQUE')
         with open(file_path + '.txt', 'w') as f:
             f.write(binary_string)
+
+        # zip = zipfile.ZipFile(file_path + '.zip', "w", zipfile.ZIP_DEFLATED)
+        # zip.write(binary_string)
 
 # save_binary(in_directory, out_directory, filename)
 
