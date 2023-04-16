@@ -10,7 +10,8 @@
 
 -----------------
 
->### Description
+>### Description 
+>(8 bits Binary encoder and decoder)
 
     You might know, that Google Drive, Onedrive, Dropbox, 
     etc., has some file storage limit, after which you need
