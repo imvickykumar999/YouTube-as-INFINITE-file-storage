@@ -23,7 +23,7 @@ def ytvideo(link):
     yt = YouTube(link)
 
     video = yt.streams.get_highest_resolution()
-    path_to_download_folder = 'video'
+    path_to_download_folder = 'vicks/video'
 
     filename = yt.title.replace(' ', '')
     # filename = f'{time.time()}'
@@ -126,7 +126,7 @@ def instavideo(url = 'ClwrpW1BB-R'):
     x = f'{time.time()}'
 
     x = re.sub('[^A-Za-z0-9]+', '', x)
-    a = os.path.join('video', x+'.mp4')
+    a = os.path.join('vicks/video', x+'.mp4')
 
     urllib.request.urlretrieve(b[0], a)
-    return x+'.mp4'
+    return x + '.mp4'

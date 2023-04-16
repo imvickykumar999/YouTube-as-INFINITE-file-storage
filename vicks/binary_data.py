@@ -35,8 +35,8 @@ def save_binary(in_directory, out_directory, filename):
         binary_string = insert_newlines(binary_string)
         # print(binary_string)
 
-        file_path = os.path.join(out_directory, 'UNIQUE')
-        with open(file_path + '.txt', 'w') as f:
+        file_path = os.path.join(out_directory, 'UNIQUE.txt')
+        with open(file_path, 'w') as f:
             f.write(binary_string)
 
         # zip = zipfile.ZipFile(file_path + '.zip', "w", zipfile.ZIP_DEFLATED)
