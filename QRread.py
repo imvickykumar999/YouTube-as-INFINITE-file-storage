@@ -1,11 +1,11 @@
 
 # pip install pyzbar
 from moviepy.editor import VideoFileClip
-from pyzbar.pyzbar import decode
 from vicks import binary_data as bd
-
-import numpy as np, os, shutil
 from vicks import split_file as yt
+
+from pyzbar.pyzbar import decode
+import numpy as np, os, shutil
 from PIL import Image
 
 SAVING_FRAMES_PER_SECOND = 1

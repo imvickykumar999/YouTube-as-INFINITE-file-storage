@@ -71,17 +71,7 @@ def frame2video(path):
 
 	mean_width = int(mean_width / num_of_images)
 	mean_height = int(mean_height / num_of_images)
-
-	# print() # square QRcode is already resized
-	# for file in dirfiles:
-	# 	if file.endswith(".jpg") or file.endswith(".jpeg") or file.endswith("png"):
-	# 		im = Image.open(os.path.join(path, file))
-
-	# 		width, height = im.size
-	# 		imResize = im.resize((mean_width, mean_height), Image.ANTIALIAS)
-	# 		imResize.save(os.path.join(path, file), 'JPEG', quality = 95)
-	# 		print(im.filename.split('\\')[-1], " is resized")
-
+	
 	video_name = f'video/{folder}.avi'
 	images = [
 		img for img in dirfiles
