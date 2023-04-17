@@ -97,6 +97,9 @@ def frame2video(path):
 		video.write(cv2.imread(os.path.join(path, image)))
 	
 	bd.compress_zip(ospath)
+	# print(ospath)
+	# bd.framerate(ospath, ospath + '.mp4')
+
 	cv2.destroyAllWindows()
 	video.release()
 

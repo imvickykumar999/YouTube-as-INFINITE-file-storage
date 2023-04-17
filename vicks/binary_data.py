@@ -1,5 +1,8 @@
 
+from moviepy.editor import VideoFileClip, AudioFileClip
+import moviepy.video.fx.all as vfx
 import os, zipfile
+
 
 def file_to_binary_string(file_path):
     with open(file_path, 'rb') as file:
@@ -55,7 +58,7 @@ def revert_back(in_directory, out_directory, filename):
 
 
 def compress_zip(file):
-    print('>>> Zipping')
+    print('>>> Zipping...')
     with zipfile.ZipFile(f'{file}.zip', 'w', zipfile.ZIP_DEFLATED) as f:
         f.write(file)
     print('>>> Zipped')
@@ -66,3 +69,14 @@ def decompress_unzip():
     with zipfile.ZipFile('output.zip', 'r') as f:
         f.extractall('.')
     print('>>> Unzipped.')
+
+# decompress_unzip()
+
+
+def framerate(in_loc, out_loc):
+    videoclip = VideoFileClip(in_loc)
+    # videoclip = videoclip.set_fps(videoclip.fps * 1)
+    videoclip = videoclip.fx(vfx.speedx, 5)
+    videoclip.write_videofile(out_loc)
+
+# framerate(in_loc, out_loc)
