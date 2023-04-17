@@ -111,9 +111,9 @@ if __name__=='__main__':
 	filename = input('Enter `URL` or file `name` from input folder : ')
 
 	try:
-		file = f'{os.path.basename(filename)}'
+		file = f"{os.path.basename(filename)}"
 		filepath = os.path.join('input', file)
-		urllib.request.urlretrieve(filename, filepath)
+		urllib.request.urlretrieve(filename.replace(' ', '%20'), filepath)
 	except:
 		file = filename
 
