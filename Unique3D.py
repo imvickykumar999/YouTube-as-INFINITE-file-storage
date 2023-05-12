@@ -67,11 +67,10 @@ for i, z in enumerate(plain.split('\n')):
             Voxel(position=(i,0,j))
             
         # else:
-        #     c+=1
         #     Voxel(
         #     position=(i,-1,j),
-        #     texture=opt_texture[c%len(opt_texture)],
-        #     default_color=color.random_color(),            
+        #     default_color=color.random_color(), 
+        #     texture='white_cube',          
         #     # default_color=color.white,
         #     )
 
@@ -104,18 +103,24 @@ def input(key):
         player.gravity *= -1
 
 window.fullscreen = 1
-player = FirstPersonController(collider='box')
+player = FirstPersonController(collider='box', 
+                               model='sphere', 
+                               color=color.yellow,
+                               texture='heightmap_1')
+
 player.gravity = 10e-2
-player.y = 100
+player.x = 1
+player.y = 2
+player.z = 1
 
 def update():
     global deatils, player, won, cont
     tc = time.time()
     
-    # if player.y < -10 or player.y > 250: # respawn
-    #     player.y = 150
+    if player.y < -10 or player.y > 100: # respawn
+        player.y = 100
 
-    if (player.y < -2) or (tc - t > 100):
+    if (player.y < -5) or (tc - t > 100):
         won.text = 'You Lost'
         won.color = color.red
 
