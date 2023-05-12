@@ -3,14 +3,16 @@ from ursina import *
 from ursina.prefabs.first_person_controller import FirstPersonController
 
 app = Ursina()
+t = time.time()
 c=0
+
 opt_texture = [
     'arrow_down',
     'arrow_right',
     'brick',
     'circle',
     'circle_outlined',
-    'cobblestone',
+    # 'cobblestone',
     'cursor',
     'file_icon',
     'folder',
@@ -30,14 +32,20 @@ opt_texture = [
     # 'white_cube',
 ]
 
+mario  = Audio('static/super-mario-bros.mp3',  loop = True,  autoplay = True)
+fall   = Audio('static/Super Mario Death.mp3', loop = False, autoplay = False)
+winner = Audio('static/Super Mario Won.mp3',   loop = True,  autoplay = False)
+cont = True
+
 class Voxel(Button):
     def __init__(self, position=(0,0,0), 
-                 texture='white_cube',
+                 texture='static/wall.png',
                  default_color=color.white,
                  ):
         super().__init__(
             parent=scene,
             position=position,
+            collider='box',
             model='cube',
             origin_y=.5,
             texture=texture,
@@ -57,11 +65,15 @@ for i, z in enumerate(plain.split('\n')):
     for j, x in enumerate(list(z)):
         if int(x):
             Voxel(position=(i,0,j))
-        else:
-            Voxel(
-            position=(i,0,j),
-            default_color=color.black,
-            )
+            
+        # else:
+        #     c+=1
+        #     Voxel(
+        #     position=(i,-1,j),
+        #     texture=opt_texture[c%len(opt_texture)],
+        #     default_color=color.random_color(),            
+        #     # default_color=color.white,
+        #     )
 
 def input(key):
     hit_info = raycast(camera.world_position, camera.forward, distance=100)
@@ -73,9 +85,9 @@ def input(key):
             Voxel(position=hit_info.entity.position + hit_info.normal, 
                 #   texture='brick',
                 #   default_color=color.orange,
-                  texture=opt_texture[c%len(opt_texture)],
-                  default_color=color.random_color(),
-                  )
+                texture=opt_texture[c%len(opt_texture)],
+                default_color=color.random_color(),                  
+                )
             
     if key == 'right mouse down' and mouse.hovered_entity:
         destroy(mouse.hovered_entity)
@@ -92,12 +104,52 @@ def input(key):
         player.gravity *= -1
 
 window.fullscreen = 1
-player = FirstPersonController(gravity=.1)
+player = FirstPersonController(collider='box')
+player.gravity = 10e-2
+player.y = 100
 
 def update():
-    # pass
-    if player.y < -10 or player.y > 250:
-        player.y = 150
+    global deatils, player, won, cont
+    tc = time.time()
+    
+    # if player.y < -10 or player.y > 250: # respawn
+    #     player.y = 150
 
-Sky()
+    if (player.y < -2) or (tc - t > 100):
+        won.text = 'You Lost'
+        won.color = color.red
+
+        mario.pause()
+        if cont:
+            cont = False
+            fall.play()
+        
+    if player.z > 158 and player.y > -1:
+        won.text = 'You Won'
+
+        mario.pause()
+        if cont:
+            cont = False
+            winner.play()
+        
+    deatils.text = f'''
+    Score = {int(player.z)}
+    Time left = {int(100 - (tc - t))} sec.
+    '''
+
+deatils = Text(
+    origin=(.1, -4),
+	font='VeraMono.ttf', 
+	color=color.white,
+	) 
+
+won = Text(
+    origin=(0,-4),
+	color=color.green,
+	) 
+
+skybox_image = load_texture("static/space.png")
+sky = Sky(texture=skybox_image)
+
+# Sky()
 app.run()
