@@ -110,7 +110,7 @@ player = FirstPersonController(collider='box',
 
 player.gravity = 10e-2
 player.x = 1
-player.y = 2
+player.y = 100
 player.z = 1
 
 def update():
